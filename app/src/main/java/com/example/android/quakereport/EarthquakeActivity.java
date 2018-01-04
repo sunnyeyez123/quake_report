@@ -65,7 +65,7 @@ public class EarthquakeActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
 
                 Earthquake earthquake = earthquakes.get(position);
-                
+
                 String url = earthquake.getUrl();
                 Intent websiteIntent = new Intent(Intent.ACTION_VIEW);
                 websiteIntent.setData(Uri.parse(url));
