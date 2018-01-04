@@ -41,7 +41,7 @@ public class EarthquakeActivity extends AppCompatActivity {
 
         // Create a fake list of earthquakes.
         ArrayList<Earthquake> earthquakes = QueryUtils.extractEarthquakes();
-        
+
 
         // Create a new {@link ArrayAdapter} of earthquakes
 

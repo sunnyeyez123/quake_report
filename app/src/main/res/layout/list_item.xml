@@ -11,26 +11,63 @@
     <TextView
         android:id="@+id/magnitude_text_view"
         android:layout_width="0dp"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
         android:layout_weight="1"
 
         tools:text="4.2" />
 
-    <TextView
-        android:id="@+id/location_text_view"
+    <LinearLayout
         android:layout_width="0dp"
-        android:layout_height="match_parent"
-
+        android:layout_height="wrap_content"
         android:layout_weight="1"
-        tools:text="San Francisco" />
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/date_text_view"
+
+        <TextView
+            android:id="@+id/offset_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            tools:text="20 km NW of" />
+
+        <TextView
+            android:id="@+id/location_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            tools:text="San Francisco" />
+
+
+    </LinearLayout>
+
+
+
+
+    <LinearLayout
         android:layout_width="0dp"
-        android:layout_height="match_parent"
-
+        android:layout_height="wrap_content"
         android:layout_weight="1"
-        tools:text="Jan 2,2018" />
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/date_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            tools:text="Jan 2,2018" />
+
+
+        <TextView
+            android:id="@+id/time_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            tools:text="9:25 PM" />
+
+
+    </LinearLayout>
+
 
 </LinearLayout>
