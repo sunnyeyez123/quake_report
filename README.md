@@ -9,6 +9,10 @@ Used in a Udacity course in the Beginning Android Nanodegree.
 More info on the USGS com.example.android.quakereport.Earthquake API available at:
 https://earthquake.usgs.gov/fdsnws/event/1/
 
+Additional Features COMING SOON
+--------------
+- Choose from a list of predefined queries
+
 Pre-requisites
 --------------
 
@@ -50,4 +54,4 @@ distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
 WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  See the
 License for the specific language governing permissions and limitations under
 the License.
-# quake_report
+
