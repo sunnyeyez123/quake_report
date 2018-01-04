@@ -15,8 +15,10 @@
  */
 package com.example.android.quakereport;
 
+import android.content.Intent;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -40,7 +42,7 @@ public class EarthquakeActivity extends AppCompatActivity {
 
 
         // Create a fake list of earthquakes.
-        ArrayList<Earthquake> earthquakes = QueryUtils.extractEarthquakes();
+        final ArrayList<Earthquake> earthquakes = QueryUtils.extractEarthquakes();
 
 
         // Create a new {@link ArrayAdapter} of earthquakes
@@ -60,7 +62,15 @@ public class EarthquakeActivity extends AppCompatActivity {
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+
+                Earthquake earthquake = earthquakes.get(position);
+                
+                String url = earthquake.getUrl();
+                Intent websiteIntent = new Intent(Intent.ACTION_VIEW);
+                websiteIntent.setData(Uri.parse(url));
+                startActivity(websiteIntent);
+
             }
         });
 
