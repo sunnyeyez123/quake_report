@@ -6,7 +6,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
+import android.graphics.drawable.GradientDrawable;
+
+import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import android.widget.TextView;
@@ -105,7 +107,21 @@ public class EarthquakeAdapter extends ArrayAdapter<Earthquake> {
         TextView magnitudeTextView = (TextView) listItemView.findViewById(R.id.magnitude_text_view);
         // Get the version number from the current AndroidFlavor object and
         // set this text on the number TextView
-        magnitudeTextView.setText(String.valueOf(currentEarthquake.getMagnitude()));
+
+        DecimalFormat formatter = new DecimalFormat("0.0");
+        String mag = formatter.format(currentEarthquake.getMagnitude());
+
+        magnitudeTextView.setText(mag);
+
+        // Set the proper background color on the magnitude circle.
+        // Fetch the background from the TextView, which is a GradientDrawable.
+        GradientDrawable magnitudeCircle = (GradientDrawable) magnitudeTextView.getBackground();
+
+        // Get the appropriate background color based on the current earthquake magnitude
+        int magnitudeColor = getMagnitudeColor(currentEarthquake.getMagnitude());
+
+        // Set the color on the magnitude circle
+        magnitudeCircle.setColor(magnitudeColor);
 
        /* ImageView iconView = (ImageView) listItemView.findViewById(R.id.icon);
 
@@ -151,5 +167,48 @@ public class EarthquakeAdapter extends ArrayAdapter<Earthquake> {
     private String formatTime(Date dateObject) {
         SimpleDateFormat timeFormat = new SimpleDateFormat("h:mm a");
         return timeFormat.format(dateObject);
+    }
+
+
+    private int getMagnitudeColor(double magnitude){
+
+        int magnitude1Color = ContextCompat.getColor(getContext(), R.color.magnitude1);
+
+        switch ((int) magnitude){
+            case 1:
+                magnitude1Color = ContextCompat.getColor(getContext(), R.color.magnitude1);
+                break;
+            case 2:
+                magnitude1Color = ContextCompat.getColor(getContext(), R.color.magnitude2);
+                break;
+            case 3:
+                magnitude1Color = ContextCompat.getColor(getContext(), R.color.magnitude3);
+                break;
+            case 4:
+                magnitude1Color = ContextCompat.getColor(getContext(), R.color.magnitude4);
+                break;
+            case 5:
+                magnitude1Color = ContextCompat.getColor(getContext(), R.color.magnitude5);
+                break;
+            case 6:
+                magnitude1Color = ContextCompat.getColor(getContext(), R.color.magnitude6);
+                break;
+            case 7:
+                magnitude1Color = ContextCompat.getColor(getContext(), R.color.magnitude7);
+                break;
+            case 8:
+                magnitude1Color = ContextCompat.getColor(getContext(), R.color.magnitude8);
+                break;
+            case 9:
+                magnitude1Color = ContextCompat.getColor(getContext(), R.color.magnitude9);
+                break;
+            case 10:
+                magnitude1Color = ContextCompat.getColor(getContext(), R.color.magnitude10plus);
+                break;
+            default:
+                break;
+        }
+
+        return magnitude1Color;
     }
 }
