@@ -38,7 +38,11 @@ public class EarthquakeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.earthquake_activity);
 
-        // Create a fake list of earthquake locations.
+
+        // Create a fake list of earthquakes.
+        ArrayList<Earthquake> earthquakes = com.example.android.quakereport.QueryUtils.extractEarthquakes();
+
+       /* // Create a fake list of earthquake locations.
         final ArrayList<Earthquake> earthquakes = new ArrayList<Earthquake>();
         earthquakes.add(new Earthquake("San Francisco", "Feb 2,2016", 7.2));
         earthquakes.add(new Earthquake("London", "July 20,2015", 6.1));
@@ -47,7 +51,7 @@ public class EarthquakeActivity extends AppCompatActivity {
         earthquakes.add(new Earthquake("Moscow", "Jan 31,2013", 2.8));
         earthquakes.add(new Earthquake("Rio de Janeiro", "Aug 19,2012", 4.9));
         earthquakes.add(new Earthquake("Paris", "Oct 30,2011", 1.6));
-
+*/
 
         // Create a new {@link ArrayAdapter} of earthquakes
 
