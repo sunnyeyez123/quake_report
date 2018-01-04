@@ -26,6 +26,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -38,6 +39,7 @@ public class EarthquakeActivity extends AppCompatActivity implements LoaderCallb
 
     /** TextView that is displayed when the list is empty */
     private TextView mEmptyStateTextView;
+    private ProgressBar mProgressBar;
 
     /**
      * Constant value for the earthquake loader ID. We can choose any integer.
@@ -45,10 +47,8 @@ public class EarthquakeActivity extends AppCompatActivity implements LoaderCallb
      */
     private static final int EARTHQUAKE_LOADER_ID = 1;
     /** URL for earthquake data from the USGS dataset */
-  //  private static final String USGS_REQUEST_URL = "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&orderby=time&minmag=5&limit=10";
+   private static final String USGS_REQUEST_URL = "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&orderby=time&minmag=5&limit=10";
 
-
-    private static final String USGS_REQUEST_URL ="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -107,6 +107,11 @@ public class EarthquakeActivity extends AppCompatActivity implements LoaderCallb
 
     @Override
     public void onLoadFinished(Loader<List<Earthquake>> loader, List<Earthquake> earthquakes) {
+
+        mProgressBar = (ProgressBar) findViewById(R.id.loading_spinner);
+        mProgressBar.setVisibility(View.GONE);
+
+
         // Clear the adapter of previous earthquake data
         mAdapter.clear();
 
