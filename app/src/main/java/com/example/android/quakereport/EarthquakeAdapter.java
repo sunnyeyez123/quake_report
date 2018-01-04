@@ -57,7 +57,7 @@ public class EarthquakeAdapter extends ArrayAdapter<Earthquake> {
 
         String location = currentEarthquake.getLocation();
         int index = location.indexOf("of");
-        String primaryLocation  = location.substring(index+3, location.length()-1);
+        String primaryLocation  = location.substring(index+3, location.length());
         String locationOffset = getContext().getString(R.string.near_the);
 
         if (index != -1){
