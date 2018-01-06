@@ -123,31 +123,7 @@ public class EarthquakeAdapter extends ArrayAdapter<Earthquake> {
         // Set the color on the magnitude circle
         magnitudeCircle.setColor(magnitudeColor);
 
-       /* ImageView iconView = (ImageView) listItemView.findViewById(R.id.icon);
 
-        if (currentEarthquake.hasImage()) {
-            // Find the ImageView in the list_item.xml layout with the ID list_item_icon
-
-            // Get the image resource ID from the current AndroidFlavor object and
-            // set the image to iconView
-            iconView.setImageResource(currentEarthquake.getImageResourceId());
-            iconView.setVisibility(View.VISIBLE);
-
-
-        } else {
-
-            iconView.setVisibility(View.GONE);
-        }
-
-        View background = listItemView.findViewById(R.id.text_container);
-        int color = ContextCompat.getColor(getContext(), mBackgroundColor);
-
-        background.setBackgroundColor(color);
-*/
-
-
-        // Return the whole list item layout (containing 2 TextViews and an ImageView)
-        // so that it can be shown in the ListView
         return listItemView;
 
     }
